@@ -6,11 +6,11 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 function Todo(props) {
   
-  // console.log(DeleteForeverIcon);
+  var date = new Date().toTimeString();
   return (
     <List classname="todo__list">
       <ListItem>
-        <ListItemText primary={props.text.todo} secondary="Deadline" />
+        <ListItemText primary={props.text.todo} secondary={date} />
       </ListItem>
       <DeleteForeverIcon onClick={event => db.collection('todos').doc(props.text.id).delete()} />
     </List>
